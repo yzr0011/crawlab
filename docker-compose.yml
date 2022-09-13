@@ -10,5 +10,7 @@ services:
       - "8080:8080"
     depends_on:
       - mongo
+    volumes:
+      - /Users/yzr-mac/Desktop/td_work/log:/home/log    # 挂载数据文件，根据实际路径修改 ：前的路径
   mongo:
     image: mongo:4.2

@@ -4,9 +4,6 @@ FROM crawlabteam/crawlab-frontend:latest AS frontend-build
 
 FROM crawlabteam/crawlab-public-plugins:latest AS public-plugins-build
 
-# images
-FROM crawlabteam/crawlab-base:latest
-
 # add files
 COPY ./backend/conf /app/backend/conf
 COPY ./nginx /app/nginx
