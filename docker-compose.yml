@@ -11,6 +11,7 @@ services:
     depends_on:
       - mongo
     volumes:
-      - /Users/yzr-mac/Desktop/td_work/log:/home/log    # 挂载数据文件，根据实际路径修改 ：前的路径 test
+      - /Users/yzr-mac/Desktop/td_work/log:/home/log    # 挂载数据文件，根据实际路径修改 ：前的路径
+      - /Users/yzr-mac/Desktop/td_work/log/Common_Module:/home/log/Common_Module
   mongo:
     image: mongo:4.2
