@@ -1,4 +1,4 @@
-version: '3.3'
+version: '0.0.1'
 services:
   master:
     image: crawlabteam/crawlab
@@ -6,12 +6,15 @@ services:
     environment:
       CRAWLAB_NODE_MASTER: "Y"
       CRAWLAB_MONGO_HOST: "mongo"
+      PYTHONPATH: "/home/Common_Module"
     ports:
       - "8080:8080"
     depends_on:
       - mongo
     volumes:
-      - /Users/yzr-mac/Desktop/td_work/log:/home/log    # 挂载数据文件，根据实际路径修改 ：前的路径
-      - /Users/yzr-mac/Desktop/td_work/log/Common_Module:/home/log/Common_Module
+      - /Users/yzr-mac/Desktop/td_work/log:/home/log    # 挂载数据文件，根据实际路径修改     前路径为宿主机 后为容器   注意宿主机路径会覆盖容器路径，如果容器路径有文件将被清空覆盖，宿主机文件无碍
+      - /Users/yzr-mac/Desktop/td_work/log/Common_Module:/home/Common_Module
   mongo:
     image: mongo:4.2
+    ports:
+      - "27017:27017"
